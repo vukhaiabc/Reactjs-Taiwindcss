@@ -8,8 +8,8 @@ function Content() {
   const customer = useSpring({ customers: 10245, from: { customers: 0 } });
   const card = useSpring({ cards: 9999, from: { cards: 0 } });
   return (
-    <section>
-      <div className="bg-gradient-to-b from-blue-600 to-cyan-300 rounded-lg w-[240px] mx-auto py-8">
+    <section className="md:grid md:grid-cols-4 items-center">
+      <div className="bg-gradient-to-b from-blue-600 to-cyan-300 rounded-lg w-[240px] mx-auto py-8 md:col-start-2 md:col-span-1">
         <div className="flex items-center justify-center gap-7">
           <FaUserAlt size={"24px"} />
           <div>
@@ -35,7 +35,7 @@ function Content() {
           </div>
         </div>
       </div>
-      <div className="text-14 w-[100%] mt-[90px] font-semibold">
+      <div className="text-14 w-[100%] mt-[90px] font-semibold md:mt-0 md:col-span-2">
         <div className="check-content">
           <img src={checkIconMobile} alt="checkpoint" />
           <p>Card reports sent to your phone every weeks</p>

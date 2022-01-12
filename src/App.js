@@ -18,21 +18,19 @@ function App() {
       })
     }
     window.addEventListener("resize", handleSize);
+    handleSize()
     return ()=> window.removeEventListener("resize",handleSize)
   },[])
   useEffect(()=>{
     
-    if(windowSize.width < 500) {
-      setIsMobile(true)
-    }
-    else {
-      setIsMobile(false)
-    }
+    
+    windowSize.width < 768 ? setIsMobile(true) : setIsMobile(false)
+
   },[windowSize])
   return (
     <div className="h-screen bg-gradient-to-b from-blue-600 to-cyan-400 font-popins overflow-y-auto overflow-x-hidden">
       <div className="max-w-6xl mx-auto py-7 px-4 text-white">
-        <NavBar />
+        <NavBar isMobile = {isMobile} />
         <Slogan />
         <Content />
       </div>
